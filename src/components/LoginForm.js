@@ -11,7 +11,7 @@ class LoginForm extends React.Component {
     };
     this.handleUsernameChange = this.handleUsernameChange.bind(this)
     this.handlePasswordChange = this.handlePasswordChange.bind(this)
-    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleLogin = this.handleLogin.bind(this);
   }
 
   handleUsernameChange = (event) => {
@@ -26,13 +26,13 @@ class LoginForm extends React.Component {
     })
   }
 
-  handleSubmit = (event) => {
+  handleLogin = (event) => {
     event.preventDefault();
     let username = this.state.username
     let password = this.state.password
     debugger
     if (username !== "" && password !== "") {
-      this.props.onSubmit({username, password})
+      this.props.handleLogin({username, password})
       this.setState({
         username: '',
         password: ''
@@ -43,7 +43,7 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleLogin}>
         <div>
           <label>
             Username
@@ -69,7 +69,7 @@ class LoginForm extends React.Component {
           </label>
         </div>
         <div>
-          <button onSubmit={handleLogin} type="submit">Log in</button>
+          <button type="submit">Log in</button>
         </div>
       </form>
     );
