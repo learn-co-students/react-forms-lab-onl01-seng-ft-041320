@@ -28,7 +28,6 @@ class LoginForm extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    
     let username = this.state.username
     let password = this.state.password
     debugger
@@ -70,7 +69,7 @@ class LoginForm extends React.Component {
           </label>
         </div>
         <div>
-          <button onSubmit={this.handleSubmit} type="submit">Log in</button>
+          <button type="submit">Log in</button>
         </div>
       </form>
     );
