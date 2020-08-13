@@ -8,6 +8,11 @@ class App extends Component {
     console.log(`Logging in ${username} with password ${password}`);
   };
 
+  message = ({message}) => {
+    console.log(`${message}`);
+  };
+
+
   render() {
     return (
       <div>
@@ -20,7 +25,7 @@ class App extends Component {
         <h1>
           <pre>TwitterMessage</pre>
         </h1>
-        <TwitterMessage maxChars={280} />
+        <TwitterMessage message={this.message} maxChars={280} />
 
 
 
